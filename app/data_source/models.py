@@ -1,8 +1,6 @@
 from sqlalchemy import Column, Integer, String, ForeignKey
 from sqlalchemy.orm import DeclarativeBase, relationship
 
-from config import engine
-
 
 class Base(DeclarativeBase):
     pass
@@ -25,8 +23,5 @@ class Task(Base):
     user_id = Column(Integer, ForeignKey("users.id"), nullable=False)
     user = relationship("User", back_populates="tasks")
 
+# Base.metadata.create_all(engine)
 
-Base.metadata.create_all(engine)
-
-# Questions
-# 1. Why tasks in the User class and user in the Task class?
