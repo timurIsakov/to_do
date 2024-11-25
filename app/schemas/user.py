@@ -1,6 +1,6 @@
 from pydantic import BaseModel, ConfigDict
 
-from app.schemas.task import TaskSchemas
+from app.schemas.task import TaskReadSchemas
 
 
 class UserBaseSchema(BaseModel):
@@ -15,7 +15,7 @@ class UserReadSchema(UserBaseSchema):
 
 class UserDetailsReadSchema(UserBaseSchema):
     id: int
-    tasks: list[TaskSchemas]
+    tasks: list[TaskReadSchemas]
 
 
 class UserCreateSchema(UserBaseSchema):
