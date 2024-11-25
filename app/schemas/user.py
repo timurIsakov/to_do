@@ -1,7 +1,22 @@
-from pydantic import BaseModel
-from task import Task
+from pydantic import BaseModel, ConfigDict
+
+from app.schemas.task import TaskSchemas
 
 
-class User(BaseModel):
+class UserBaseSchema(BaseModel):
     name: str
-    tasks: list[Task]
+
+    model_config = ConfigDict(from_attributes=True)
+
+
+class UserReadSchema(UserBaseSchema):
+    id: int
+
+
+class UserDetailsReadSchema(UserBaseSchema):
+    id: int
+    tasks: list[TaskSchemas]
+
+
+class UserCreateSchema(UserBaseSchema):
+    pass

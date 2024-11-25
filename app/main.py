@@ -1,7 +1,10 @@
 from fastapi import FastAPI
 from starlette.responses import RedirectResponse
 
+from app.routers.user import user_router
+
 app = FastAPI()
+app.include_router(user_router)
 
 
 @app.get("/")
