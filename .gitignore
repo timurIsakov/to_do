@@ -1,2 +1,28 @@
-.idea
-.venv
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+
+# Virtual environment
+venv/
+.venv/
+
+# Logs and databases
+*.log
+
+# Environment variables
+.env
+
+# Pytest
+.pytest_cache/
+.coverage
+
+# Byte-compiled files
+*.pyc
+
+# IDE
+.vscode/
+.idea/
+
+
