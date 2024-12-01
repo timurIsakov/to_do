@@ -22,5 +22,3 @@ class Task(Base):
     description = Column(String, nullable=True)
     user_id = Column(Integer, ForeignKey("users.id"), nullable=False)
     user = relationship("User", back_populates="tasks")
-
-# Base.metadata.create_all(engine)
